@@ -1,8 +1,8 @@
 import { useState } from "react"
-import VitaLabBranco from "./assets/Ativo_4.png"
-import "./styles.css"
+import VitaLabBranco from 'C:/Users/Erick/Desktop/react-login-clinica/src/assets/Ativo_4.png'
+import 'C:/Users/Erick/Desktop/react-login-clinica/src/components/login_css.css'
 
-const App = () =>{
+const Perfil = () =>{
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -50,4 +50,4 @@ const App = () =>{
   )
 }
 
-export default App;
+export default Perfil;
