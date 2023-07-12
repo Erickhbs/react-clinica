@@ -1,7 +1,6 @@
 
-import "./NavBarStyles.css"
+import "../styles/nav.css"
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
-import Ativo from '../assets/Ativo_3.png'
 
 const NavBar= () =>{
     return(
@@ -9,12 +8,17 @@ const NavBar= () =>{
             <Link to='/' className='logo'>Vitas Lab</Link>
             <ul className="">
                 <MeuLink to='/'>Home</MeuLink>
-                <MeuLink to='/consulta'>Consulta</MeuLink>
-                <MeuLink to='/paciente'>Paciente</MeuLink>
-                <MeuLink to='/medico'>Medico</MeuLink>
-                <MeuLink to='/prontuario'>Prontuario</MeuLink>
+
+                <li className='dropdown'>
+                    <span className="menu-label" color="#fff">Perfil</span>
+                    <ul className="dropdown-menu">
+                        <MeuLink to='/paciente'>Paciente</MeuLink>
+                        <MeuLink to='/medico'>Medico</MeuLink>
+                        <MeuLink to='/prontuario'>Prontuario</MeuLink>
+                    </ul>
+                </li>
                 <MeuLink to='/sobre'>Sobre</MeuLink>
-                <MeuLink to='/perfil'>Perfil</MeuLink>
+                <MeuLink to='/login'>Login</MeuLink>
             </ul>
         </nav>
     )

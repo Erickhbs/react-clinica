@@ -1,6 +1,11 @@
+import Form from '../components/Form'
+
 const Paciente = () =>{
     return(
-        <div className="page">Paciente page</div>
+        <div>
+            <div></div>
+            <div><Form/></div>
+        </div>
     )
 }
 export default Paciente

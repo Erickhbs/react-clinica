@@ -1,4 +1,4 @@
-import 'C:/Users/Erick/Desktop/react-login-clinica/src/components/card.css'
+import '../styles/card.css'
 import User from '../assets/user.png'
 
 const Sobre = () =>{
@@ -8,19 +8,19 @@ const Sobre = () =>{
             <div className='container' id='div'>
                 
                 <div className="card">
-                    <img width='200px' src={User}/>
+                    <img src={User}/>
                     <h2 >Phelyppe Álex</h2>
                 </div>
                 <div className="card">
-                    <img width='200px' src={User}/>
+                    <img src={User}/>
                     <h2 >Emanuel Italo</h2>
                 </div>
                 <div className="card">
-                    <img width='200px' src={User}/>
+                    <img src={User}/>
                     <h2 >Erick Barros</h2>
                 </div>
                 <div className="card">
-                    <img width='200px' src={User}/>
+                    <img src={User}/>
                     <h2 >Rafael Borba</h2>
                 </div>            
             </div>
