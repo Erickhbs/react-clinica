@@ -1,6 +1,11 @@
+
+
 const Medico = () =>{
+
     return(
-        <div className="page">Medico page</div>
+        <div>
+            
+        </div>
     )
 }
 export default Medico

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import '../styles/form.css'
-import ICON from '../assets/iconM.png'
+import ICON from '../assets/user.png'
 
  const Form = () =>{
      const [dataForm, setDataForm] = useState({
@@ -22,13 +22,17 @@ import ICON from '../assets/iconM.png'
         }))
     }
 
+    console.log(dataForm)
+
     return(
         <div className="prancheta">
             <div className="header">
                 <img src={ICON} alt="Logo"/>
                 <label className="form-label" htmlFor="nome">Cadastrando o Paciente</label>
             </div>
-            <form onSubmit={() => {}}>
+            <form onSubmit={() => {
+                console.log(dataForm)
+            }}>
                 <div>
                     <label className="form-label" htmlFor="nome">Nome</label>
                     <input className="form-input" type="text" name="nome" onChange={handleChangeValue} />
@@ -55,7 +59,7 @@ import ICON from '../assets/iconM.png'
                 </div>
                 <div>
                     <label className="form-label" htmlFor="altura">Altura</label>
-                    <input className="form-input" type="number" name="altura" onChange={handleChangeValue}/>
+                    <input className="form-input" type="text" name="altura" onChange={handleChangeValue}/>
                 </div>
                 <div>
                     <label className="form-label">Sexo</label>

@@ -1,6 +1,8 @@
+import Pedir from "../texte"
+
 const Prontuario = () =>{
     return(
-        <div className="page">Prontuario page</div>
+        <div><Pedir/></div>
     )
 }
 export default Prontuario

@@ -10,11 +10,11 @@ const NavBar= () =>{
                 <MeuLink to='/'>Home</MeuLink>
 
                 <li className='dropdown'>
-                    <span className="menu-label" color="#fff">Perfil</span>
+                    <span className="menu-label" color="#fff">Informações</span>
                     <ul className="dropdown-menu">
-                        <MeuLink to='/paciente'>Paciente</MeuLink>
-                        <MeuLink to='/medico'>Medico</MeuLink>
-                        <MeuLink to='/prontuario'>Prontuario</MeuLink>
+                        <MeuLink to='/paciente'>Pacientes</MeuLink>
+                        <MeuLink to='/medico'>Medicos</MeuLink>
+                        <MeuLink to='/prontuario'>Prontuarios</MeuLink>
                     </ul>
                 </li>
                 <MeuLink to='/sobre'>Sobre</MeuLink>
