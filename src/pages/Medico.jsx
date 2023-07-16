@@ -1,10 +1,6 @@
-
-
 const Medico = () =>{
-
     return(
-        <div>
-            
+        <div>    
         </div>
     )
 }

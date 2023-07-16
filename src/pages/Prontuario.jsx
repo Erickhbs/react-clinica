@@ -1,8 +1,8 @@
-import Pedir from "../texte"
-
 const Prontuario = () =>{
     return(
-        <div><Pedir/></div>
+        <div>
+            <p>teste</p>
+        </div>
     )
 }
 export default Prontuario

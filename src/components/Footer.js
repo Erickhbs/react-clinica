@@ -1,7 +1,6 @@
 const Footer = () =>{
     return(
-        <nav></nav>
-        
+        <nav></nav> 
     )
 }
 

@@ -8,19 +8,19 @@ const Sobre = () =>{
             <div className='container' id='div'>
                 
                 <div className="card">
-                    <img src={User}/>
+                    <img src={User} alt=''/>
                     <h2 >Phelyppe Álex</h2>
                 </div>
                 <div className="card">
-                    <img src={User}/>
+                    <img src={User} alt=''/>
                     <h2 >Emanuel Italo</h2>
                 </div>
                 <div className="card">
-                    <img src={User}/>
+                    <img src={User} alt=''/>
                     <h2 >Erick Barros</h2>
                 </div>
                 <div className="card">
-                    <img src={User}/>
+                    <img src={User} alt=''/>
                     <h2 >Rafael Borba</h2>
                 </div>            
             </div>
