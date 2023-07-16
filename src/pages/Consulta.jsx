@@ -1,10 +1,10 @@
-import Busca from '../Api'
 import '../styles/card.css'
+import Pedir from '../texte'
 
 const Consulta = () =>{
     return(
         <div>
-            <Busca/>
+            <Pedir/>
         </div>
     )
 }

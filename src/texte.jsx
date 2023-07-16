@@ -1,24 +1,40 @@
 import { useEffect, useState } from "react";
 import React from 'react';
 
-
 const Pedir = () =>{
 
     const [data, setData] = useState([])
     const url = 'http://localhost:8080/pacientes'
-    console.log(fetch(url))
-    
 
-    return(
-        <div className="flex-container">
-            {data.map((i) =>(
-                <div className="corpo">
+    async function getPacientes() {
+        try {
+          const res = await fetch(url);
+          if (!res.ok) {
+            throw new Error('Erro na solicitação');
+          }
+          const data = await res.json();
+          setData(data.results);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+    useEffect(()=>{
+        getPacientes()
+    },[])
+    
+    
+    return (
+        <>
+            <div className="flex-container">
+            {data ? (data.map((i) => (
+                <div className="corpo" key={i.id}>
                     <div className='principal'>
-                        <h4>Nome: {i.nome.toUpperCase()}</h4>
-                        <p>CPF: {i.cpf}</p>
+                        <h4 key={i.nome}>Nome: {i.nome.toUpperCase()}</h4>
+                        <p key={i.cpf}>CPF: {i.cpf}</p>
                         <p>Sexo: {i.sexo}</p>
                     </div>
-                    
+
                     <div className="mais">
                         <p>Idade: {i.idade}</p>
                         <p>Altura: {i.altura}</p>
@@ -27,10 +43,13 @@ const Pedir = () =>{
                         <p>Email: {i.email}</p>
                     </div>
                 </div>
-            ))}
-        </div>
+                ))
+            ) : (
+            <p>Carregando...</p>
+            )}
+            </div>
+        </>
     )
-
 }
 
 export default Pedir

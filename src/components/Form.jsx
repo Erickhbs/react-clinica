@@ -22,7 +22,24 @@ import ICON from '../assets/user.png'
         }))
     }
 
-    console.log(dataForm)
+    const handleSubmit = (event) => {
+        event.preventDefault()
+      
+        fetch('http://localhost:8080/pacientes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dataForm),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+        })
+    }
 
     return(
         <div className="prancheta">
@@ -30,9 +47,7 @@ import ICON from '../assets/user.png'
                 <img src={ICON} alt="Logo"/>
                 <label className="form-label" htmlFor="nome">Cadastrando o Paciente</label>
             </div>
-            <form onSubmit={() => {
-                console.log(dataForm)
-            }}>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label className="form-label" htmlFor="nome">Nome</label>
                     <input className="form-input" type="text" name="nome" onChange={handleChangeValue} />
