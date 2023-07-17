@@ -1,40 +1,35 @@
-import { useEffect, useState } from "react";
-import { Card, Row, Container, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
-const Home = () =>{
-    const [pacientes, setPacientes] = useState([]);
-
-  useEffect(() => {
-    getPacientes();
-  }, []);
-
-  async function getPacientes() {
-    await fetch("http://localhost:8080/pacientes").then(
-      (response) => response.json().then((data) => setPacientes(data))
-    );
-  }
-
+const Home = () => {
   return (
-    <>
-      <Container>
-        <Row className="justify-content-md-center">
-          {pacientes.map((p, index) => (
-            <Card key={index} style={{ width: "12rem" }}>
-              <Card.Img src="pokebola.png" />
-              <Card.Body>
-                <Card.Title>{p.nome}</Card.Title>
-                <Link to={`/}`}>
-                  <Button variant="dark" >
-                    Descrição
-                  </Button>
-                </Link>
-              </Card.Body>
-            </Card>
-          ))}
-        </Row>
-      </Container>
-    </>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Primeiro</th>
+          <th scope="col">Último</th>
+          <th scope="col">Nickname</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
   );
-}
-export default Home
+};
+export default Home;

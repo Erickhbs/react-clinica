@@ -1,6 +1,9 @@
+import FormM from '../components/FormM'
+
 const Medico = () =>{
     return(
-        <div>    
+        <div>
+            <FormM/>
         </div>
     )
 }
