@@ -4,7 +4,7 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 const NavBar= () =>{
     return(
         <nav className='Nav'>
-            <Link to='/' className='logo'>Vitas Lab</Link>
+            <Link to='/' className='logo'>VitaLabs</Link>
             <ul className="">
                 <MeuLink to='/'>Home</MeuLink>
 
