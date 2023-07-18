@@ -2,19 +2,27 @@ import { useState } from 'react'
 import '../styles/form.css'
 import ICON from '../assets/user.png'
 
- const Form = () =>{
-         const [dataForm, setDataForm] = useState({
-         nome:'',
-         cpf:'',
-         sexo:'',
-         idade:'',
-         peso:'',
-         contato:'',
-         email:'',
-         altura:'',
-     })
+const Form = () =>{
+    const [dataForm, setDataForm] = useState({
+        nome:'',
+        cpf:'',
+        sexo:'',
+        idade:'',
+        peso:'',
+        contato:'',
+        email:'',
+        altura:'',
+        prontuario: {
+            alergias:'default',
+            genero:'default',
+            dataNascimento:'default',
+            endereco:'default',
+            limmitacoes:'default',
+            naturalidade:'default',
+        }
+    })
  
-     const handleChangeValue = (event) => {
+    const handleChangeValue = (event) => {
         setDataForm((dataForm) => ({
             ...dataForm,
             [event.target.name]: event.target.value,
@@ -22,7 +30,7 @@ import ICON from '../assets/user.png'
     }
 
     const handleSubmit = (event) => {
-        const token = "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBcGlSZXN0RGVtbyIsInN1YiI6Iml0YWxvIiwiZXhwIjoxNjg5NTU4NzE1LCJpYXQiOjE2ODk1NTUxMTUsInNjb3BlIjoiUk9MRV9VU0VSIn0.jRedTsD0RarvE43af56NfZRkXqUmvYBazWI8unzUTjUa4ge19kx4n1qNBdYDRkhs41vwqAIbFEDPYufaELayr59tgfqAGAOR8NAcVMffv4Tt9cjP11bzPW5J-ey6nPxCI5_7gk74rW-pSqedmY-qg8dZT8GGApMRKEOgvKN1WJ3fGU3tBAcbk50Dnme_zw-G48Gy9QcjlCDma6CoNRE3VfeNqhLsU3w0X3m7s-veuIMuAiTchnkQWBD50dwGPHvgTiFZpDtUfdjJO7lxwq_UCFS-1dZX6vgjxcI9A4oh-PHNeK6qZw9Uy4pUtdXJ4PThEc7ZWoMcNbDvMwHoimJyUA";
+        const token = "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBcGlSZXN0RGVtbyIsInN1YiI6Iml0YWxvIiwiZXhwIjoxNjg5NjY5MzQ3LCJpYXQiOjE2ODk2NjU3NDcsInNjb3BlIjoiUk9MRV9VU0VSIn0.ns5gd5VQa3GLDain8yZrzIXtO740P_Yyr5ppSNWlfqoA0DYVrwLIGrHVtKXsQsB6XyduCC5shJz7l43ZAfSk2buRzFoNl4kKFkB8gqqKFV7xGgI10LvWsENHzPGwEZz2cpxqnLRpDtrHTzBshsXDS2J_nstbdd3azXhqqlbxeCSt7dJpjJGid6UxFrybEWykpS9YeiQTe7rxVkHGJo-v81ZxdnN25ik2uTRBf9r4-GAwSHv8AoVPHDcxl_8bxuSTp_XUxPcJbGskUVU3uPqBcyLcARlKaNrxj8DJfsVsrXWwtCi75mKOXFwdblP4aof3paeTDHjBdnpNW3Zpe_194w"
         event.preventDefault()
       
         fetch('http://localhost:8080/pacientes', {
@@ -36,7 +44,7 @@ import ICON from '../assets/user.png'
         .then(response => response.json())
         .then(data => {
             console.log(data);
-        })
+        }) 
         .catch(error => {
             console.error('Erro:', error);
         })

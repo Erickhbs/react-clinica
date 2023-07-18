@@ -1,4 +1,3 @@
-
 import "../styles/nav.css"
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 
@@ -10,11 +9,10 @@ const NavBar= () =>{
                 <MeuLink to='/'>Home</MeuLink>
 
                 <li className='dropdown'>
-                    <span className="menu-label" color="#fff">Informações</span>
+                    <span className="menu-label" color="#fff">Cadastro</span>
                     <ul className="dropdown-menu">
                         <MeuLink to='/paciente'>Pacientes</MeuLink>
                         <MeuLink to='/medico'>Medicos</MeuLink>
-                        <MeuLink to='/prontuario'>Prontuarios</MeuLink>
                     </ul>
                 </li>
                 <MeuLink to='/sobre'>Sobre</MeuLink>

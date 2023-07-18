@@ -2,16 +2,16 @@ import { useState } from 'react'
 import '../styles/form.css'
 import ICON from '../assets/iconM.png'
 
- const FormM = () =>{
-     const [dataForm, setDataForm] = useState({
-         nome:'',
-         contato:'',
-         crm:'',
-         email:'',
-         especialidade:'',
-     })
+const FormM = () =>{
+    const [dataForm, setDataForm] = useState({
+        nome:'',
+        contato:'',
+        email:'',
+        crm:'',
+        especialidade:'',
+    })
  
-     const handleChangeValue = (event) => {
+    const handleChangeValue = (event) => {
         setDataForm((dataForm) => ({
             ...dataForm,
             [event.target.name]: event.target.value,
@@ -19,12 +19,14 @@ import ICON from '../assets/iconM.png'
     }
 
     const handleSubmit = (event) => {
+        const token = "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBcGlSZXN0RGVtbyIsInN1YiI6Iml0YWxvIiwiZXhwIjoxNjg5NjY5MzQ3LCJpYXQiOjE2ODk2NjU3NDcsInNjb3BlIjoiUk9MRV9VU0VSIn0.ns5gd5VQa3GLDain8yZrzIXtO740P_Yyr5ppSNWlfqoA0DYVrwLIGrHVtKXsQsB6XyduCC5shJz7l43ZAfSk2buRzFoNl4kKFkB8gqqKFV7xGgI10LvWsENHzPGwEZz2cpxqnLRpDtrHTzBshsXDS2J_nstbdd3azXhqqlbxeCSt7dJpjJGid6UxFrybEWykpS9YeiQTe7rxVkHGJo-v81ZxdnN25ik2uTRBf9r4-GAwSHv8AoVPHDcxl_8bxuSTp_XUxPcJbGskUVU3uPqBcyLcARlKaNrxj8DJfsVsrXWwtCi75mKOXFwdblP4aof3paeTDHjBdnpNW3Zpe_194w"
         event.preventDefault()
       
         fetch('http://localhost:8080/medicos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token,
             },
             body: JSON.stringify(dataForm),
         })
@@ -72,4 +74,4 @@ import ICON from '../assets/iconM.png'
     )
 }
  
- export default FormM
+export default FormM
